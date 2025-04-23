@@ -103,17 +103,6 @@ class MovieViewSet(
 
         return queryset.distinct()
 
-    def get_serializer_class(self):
-        if self.action == "list":
-            return MovieListSerializer
-
-        if self.action == "retrieve":
-            return MovieDetailSerializer
-
-        if self.action == "upload_image":
-            return MovieImageSerializer
-
-        return MovieSerializer
 
     @action(
         methods=["POST"],
